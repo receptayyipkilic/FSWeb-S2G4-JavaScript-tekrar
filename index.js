@@ -100,28 +100,69 @@ let ucetambolunenler,
   tekraredensayilar;
 
 // 3a çözümü
+enkucuk = sayilar[0];
+for (let i =1; i<sayilar.length; i++) {
+  if(sayilar[i] < enkucuk) {
+    enkucuk=sayilar[i];
+  } 
+} 
 
-/* kodlar buraya */
+enbuyuk = sayilar[0];
+for (let i =1; i<sayilar.length; i++) {
+  if(sayilar[i] > enbuyuk) {
+    enbuyuk=sayilar[i];
+  } 
+} 
+
 
 // 3b çözümü:
+ucetambolunenler=[];
+sayilar.forEach (sayi => {
+  if (sayi % 3 === 0) {
+    ucetambolunenler.push(sayi);
+  } 
+});
 
-/* kodlar buraya */
+
 
 // 3c çözümü:
-
-/* kodlar buraya */
+ucebolunenlerintoplami = ucetambolunenler.reduce((toplam,sayi) => toplam + sayi,0);
+console.log(ucebolunenlerintoplami);
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar = sayilar.filter(sayi => sayi < 500 );
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar = besyuzdenkucuksayilar.sort((a,b) => a-b);
 
 // 3f çözümü
 
-/* kodlar buraya */
+let tekrarSayisiObjesi = {};
+
+// İlk döngü ile sayılar dizisindeki her sayıyı ve tekrar sayısını bulalım.
+for (let i = 0; i < sayilar.length; i++) {
+  let sayi = sayilar[i];
+  if (tekrarSayisiObjesi[sayi]) {
+    tekrarSayisiObjesi[sayi]++;
+  } else {
+    tekrarSayisiObjesi[sayi] = 1;
+  }
+}
+
+tekraredensayilar = [];
+
+
+for (let sayi in tekrarSayisiObjesi) {
+  if (tekrarSayisiObjesi[sayi] > 1) {
+    tekraredensayilar.push(`${sayi} sayısı ${tekrarSayisiObjesi[sayi]} kere tekrar edilmiştir`);
+  }
+}
+
+console.log(tekraredensayilar);
+
+console.log(`Sayilar dizisinde ${sayilar.length} adet sayı vardır.` );
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
